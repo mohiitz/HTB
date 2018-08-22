@@ -1,0 +1,2 @@
+Notes:
+when only port 443 is opened on a server try to get details from the SSL certificate. We can get email from the certificate.

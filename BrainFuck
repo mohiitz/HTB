@@ -48,5 +48,21 @@ HOP RTT     ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 61.56 seconds
 
+----------------------------------
+There is no port 80 and there are lot of mail protocol.
+First I would focus on web based exploits.
+
+Look at the certificate from the browser and find the hidden information like email and alternames.
+here we find brainfuck.htb and supersecret.brainfuck.htb
+
+add these host entries in host file:
+#vi /etc/hosts/
+_______________________________
+start a wp-scan
+#wpscan -u http://www.brainfuck.htb --disable-tls-checks
+
+for authenicated scan we need valid credentials. So we will reinititate the scan with user enumeration.
+
+#wpscan -u http://www.brainfuck.htb --disable-tls-checks --enumerate u
 
 
